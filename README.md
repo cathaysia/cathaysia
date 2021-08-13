@@ -1,6 +1,6 @@
 # Hey there!
 
-[](https://github-readme-stats.vercel.app/api?username=cathaysia)
+![](https://github-readme-stats.vercel.app/api?username=cathaysia)
 
 发现缺失了一部分仓库？不要担心，只是因为我将其设为私有了。这听起来似乎不太像一个好消息，但是在做出这个决定前我已经仔细斟酌了一天。这里对所有受到影响的用户说声抱歉。
 
