@@ -58,6 +58,8 @@ Here is my code place, so just code here.
 <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/photoshop-plain.svg" alt="Photoshop" height="25" />  
 <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/latex.png" alt="Latex" height="25" />  
 <img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/webpack-original.svg" alt="Webpack" height="25" />  
+<img style="margin: 10px" src="https://img.shields.io/badge/tools-vim-white" alt="Webpack" height="25" />  
+
 </div>  
 
 <br/>  
@@ -81,12 +83,3 @@ Here is my code place, so just code here.
 <br/>  
 
 ![Profile views counter](https://komarev.com/ghpvc/?username=cathaysia&&style=flat-square)  
-  
-
-<br/>  
-
-
-<br />
-
-----
-<div align="center">Generated using <a href="https://profilinator.rishav.dev/" target="_blank">Github Profilinator</a></div>
