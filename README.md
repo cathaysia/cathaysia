@@ -1,3 +1,8 @@
+# About
+
+- C/C++/Rust/nix
+- [dragonbillow@outlook.com](dragonbillow@outlook.com)
+
 # Support me
 
 Hard work is inseparable from your support. If you think my work has helped you, please consider support me. Thanks very much.
