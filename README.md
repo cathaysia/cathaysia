@@ -1,7 +1,7 @@
 # About
 
 - C/C++/Rust/nix
-- [dragonbillow@outlook.com](dragonbillow@outlook.com)
+- [loongtao.zhang@outlook.com](loongtao.zhang@outlook.com)
 
 # Support me
 
