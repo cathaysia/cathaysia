@@ -33,4 +33,5 @@ asciidoc:
 misc:
 
 - <https://github.com/cathaysia/finalgit> [WIP] Git client.
+- <https://github.com/cathaysia/crown> A crypto library.
 
