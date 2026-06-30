@@ -57,6 +57,8 @@ jobs:
             }
 
             const now = new Date();
+            const actionRunUrl = `${process.env.GITHUB_SERVER_URL || 'https://github.com'}/${process.env.GITHUB_REPOSITORY}/actions/runs/${process.env.GITHUB_RUN_ID}`;
+            const actionRunLink = `[#${process.env.GITHUB_RUN_NUMBER || process.env.GITHUB_RUN_ID}](${actionRunUrl})`;
 
             function parseIssueUrl(url) {
               const match = url.match(/^https:\/\/api\.github\.com\/repos\/([^/]+)\/([^/]+)\/issues\/(\d+)$/);
@@ -175,7 +177,7 @@ jobs:
               });
             }
 
-            async function closeItem(repoRef, targetType) {
+            async function closeItem(repoRef, targetType, nodeId) {
               if (dryRun) {
                 core.info(`[dry-run] Would close ${repoRef.owner}/${repoRef.repo}#${repoRef.number}`);
                 return;
@@ -191,12 +193,21 @@ jobs:
                 return;
               }
 
-              await github.rest.issues.update({
-                owner: repoRef.owner,
-                repo: repoRef.repo,
-                issue_number: repoRef.number,
-                state: 'closed',
-              });
+              if (!nodeId) {
+                throw new Error(`Missing GraphQL node ID for ${repoRef.owner}/${repoRef.repo}#${repoRef.number}`);
+              }
+
+              await github.graphql(
+                `mutation($issueId: ID!) {
+                  closeIssue(input: { issueId: $issueId }) {
+                    issue {
+                      id
+                      state
+                    }
+                  }
+                }`,
+                { issueId: nodeId }
+              );
             }
 
             async function processTarget(target) {
@@ -222,13 +233,13 @@ jobs:
                     try {
                       await addComment(
                         repoRef,
-                        `${CLOSE_MARKER}\nClosing this ${target.label} because there has been no non-automation comment for ${ageDays} days.`
+                        `${CLOSE_MARKER}\n🤖 Closing this ${target.label} because there has been no non-automation comment for ${ageDays} days.\n\nclosed by ${actionRunLink}`
                       );
                     } catch (error) {
                       core.warning(`Could not add close comment to ${htmlRef}: ${error.message}`);
                     }
-                    await closeItem(repoRef, target.type);
-                    core.info(`Closed ${htmlRef}; last meaningful comment/activity was ${lastMeaningfulAt.toISOString()}.`);
+                    await closeItem(repoRef, target.type, item.node_id);
+                    core.info(`Closed ${htmlRef} ; last meaningful comment/activity was ${lastMeaningfulAt.toISOString()}.`);
                     continue;
                   }
 
@@ -236,13 +247,13 @@ jobs:
                     const remainingDays = Math.max(1, Math.ceil((closeAt.getTime() - now.getTime()) / MS_PER_DAY));
                     await addComment(
                       repoRef,
-                      `${REMINDER_MARKER}\nThis ${target.label} will be closed in ${remainingDays} day${remainingDays === 1 ? '' : 's'} if there are no new non-automation comments.`
+                      `${REMINDER_MARKER}\n🤖 This ${target.label} will be closed in ${remainingDays} day${remainingDays === 1 ? '' : 's'} if there are no new non-automation comments.\n\ntracked by ${actionRunLink}`
                     );
                     core.info(`Reminded ${htmlRef}; last meaningful comment/activity was ${lastMeaningfulAt.toISOString()}.`);
                     continue;
                   }
 
-                  core.info(`No action for ${htmlRef}; last meaningful comment/activity was ${lastMeaningfulAt.toISOString()} (${ageDays} days ago).`);
+                  core.info(`No action for ${htmlRef} ; last meaningful comment/activity was ${lastMeaningfulAt.toISOString()} (${ageDays} days ago).`);
                 } catch (error) {
                   core.warning(`Failed to process ${htmlRef}: ${error.message}`);
                 }
