@@ -1,0 +1,41 @@
+name: Update README
+
+on:
+  schedule:
+    - cron: "23 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: read
+  pull-requests: read
+
+concurrency:
+  group: update-readme
+  cancel-in-progress: false
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    env:
+      README_TARGET_USER: ${{ vars.README_TARGET_USER || github.repository_owner }}
+      README_GITHUB_TOKEN: ${{ secrets.README_GITHUB_TOKEN || github.token }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Render README
+        run: node scripts/render-readme.mjs
+
+      - name: Commit README
+        run: |
+          if git diff --quiet README.md; then
+            echo "README.md is already up to date."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs: update readme activity"
+          git push
