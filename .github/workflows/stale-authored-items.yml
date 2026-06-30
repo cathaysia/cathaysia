@@ -1,0 +1,254 @@
+name: Close stale authored PRs and issues
+
+on:
+  schedule:
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+    inputs:
+      target_author:
+        description: "GitHub username to scan. Defaults to STALE_TARGET_AUTHOR or repository owner."
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  close-stale-authored-items:
+    runs-on: ubuntu-latest
+    env:
+      TARGET_AUTHOR: ${{ inputs.target_author || vars.STALE_TARGET_AUTHOR || github.repository_owner }}
+      DRY_RUN: ${{ vars.STALE_DRY_RUN || 'false' }}
+    steps:
+      - name: Close stale authored PRs and issues
+        uses: actions/github-script@v8
+        env:
+          STALE_ITEMS_TOKEN: ${{ secrets.STALE_ITEMS_TOKEN }}
+        with:
+          github-token: ${{ secrets.STALE_ITEMS_TOKEN }}
+          script: |
+            const MS_PER_DAY = 24 * 60 * 60 * 1000;
+            const REMINDER_MARKER = '<!-- stale-authored-items:reminder -->';
+            const CLOSE_MARKER = '<!-- stale-authored-items:close -->';
+            const WARNING_DAYS = 15;
+            const TARGETS = [
+              {
+                type: 'pr',
+                queryQualifier: 'is:pr',
+                closeAfterMonths: 1,
+                label: 'pull request',
+              },
+              {
+                type: 'issue',
+                queryQualifier: 'is:issue',
+                closeAfterMonths: 3,
+                label: 'issue',
+              },
+            ];
+
+            const targetAuthor = (process.env.TARGET_AUTHOR || '').trim();
+            const dryRun = (process.env.DRY_RUN || '').toLowerCase() === 'true';
+
+            if (!process.env.STALE_ITEMS_TOKEN) {
+              throw new Error('Missing STALE_ITEMS_TOKEN secret. Add a PAT with access to the repositories you want to scan.');
+            }
+            if (!targetAuthor) {
+              throw new Error('Missing target author. Set STALE_TARGET_AUTHOR, pass workflow_dispatch target_author, or run from a user-owned repository.');
+            }
+
+            const now = new Date();
+
+            function parseIssueUrl(url) {
+              const match = url.match(/^https:\/\/api\.github\.com\/repos\/([^/]+)\/([^/]+)\/issues\/(\d+)$/);
+              if (!match) {
+                throw new Error(`Unexpected issue API URL: ${url}`);
+              }
+              return {
+                owner: match[1],
+                repo: match[2],
+                number: Number(match[3]),
+              };
+            }
+
+            function daysSince(date) {
+              return Math.floor((now.getTime() - new Date(date).getTime()) / MS_PER_DAY);
+            }
+
+            function addMonths(date, months) {
+              const source = new Date(date);
+              const target = new Date(Date.UTC(
+                source.getUTCFullYear(),
+                source.getUTCMonth() + months,
+                1,
+                source.getUTCHours(),
+                source.getUTCMinutes(),
+                source.getUTCSeconds(),
+                source.getUTCMilliseconds()
+              ));
+              const lastTargetMonthDay = new Date(Date.UTC(
+                target.getUTCFullYear(),
+                target.getUTCMonth() + 1,
+                0
+              )).getUTCDate();
+              target.setUTCDate(Math.min(source.getUTCDate(), lastTargetMonthDay));
+              return target;
+            }
+
+            function newestDate(dates) {
+              return dates.reduce((newest, date) => {
+                const current = new Date(date);
+                return current > newest ? current : newest;
+              }, new Date(0));
+            }
+
+            function isAutomationComment(comment) {
+              return comment.body?.includes(REMINDER_MARKER) || comment.body?.includes(CLOSE_MARKER);
+            }
+
+            async function getLastMeaningfulActivity(item, repoRef, targetType) {
+              const issueComments = await github.paginate(github.rest.issues.listComments, {
+                owner: repoRef.owner,
+                repo: repoRef.repo,
+                issue_number: repoRef.number,
+                per_page: 100,
+              });
+
+              const meaningfulDates = [item.created_at];
+              const reminderDates = [];
+
+              for (const comment of issueComments) {
+                if (isAutomationComment(comment)) {
+                  if (comment.body?.includes(REMINDER_MARKER)) {
+                    reminderDates.push(comment.created_at);
+                  }
+                  continue;
+                }
+                meaningfulDates.push(comment.created_at);
+              }
+
+              if (targetType === 'pr') {
+                const [reviews, reviewComments] = await Promise.all([
+                  github.paginate(github.rest.pulls.listReviews, {
+                    owner: repoRef.owner,
+                    repo: repoRef.repo,
+                    pull_number: repoRef.number,
+                    per_page: 100,
+                  }),
+                  github.paginate(github.rest.pulls.listReviewComments, {
+                    owner: repoRef.owner,
+                    repo: repoRef.repo,
+                    pull_number: repoRef.number,
+                    per_page: 100,
+                  }),
+                ]);
+
+                for (const review of reviews) {
+                  if (review.submitted_at) {
+                    meaningfulDates.push(review.submitted_at);
+                  }
+                }
+                for (const comment of reviewComments) {
+                  meaningfulDates.push(comment.created_at);
+                }
+              }
+
+              const lastMeaningfulAt = newestDate(meaningfulDates);
+              const remindedAfterLastActivity = reminderDates.some((date) => new Date(date) >= lastMeaningfulAt);
+
+              return {
+                lastMeaningfulAt,
+                remindedAfterLastActivity,
+              };
+            }
+
+            async function addComment(repoRef, body) {
+              if (dryRun) {
+                core.info(`[dry-run] Would comment on ${repoRef.owner}/${repoRef.repo}#${repoRef.number}:\n${body}`);
+                return;
+              }
+
+              await github.rest.issues.createComment({
+                owner: repoRef.owner,
+                repo: repoRef.repo,
+                issue_number: repoRef.number,
+                body,
+              });
+            }
+
+            async function closeItem(repoRef, targetType) {
+              if (dryRun) {
+                core.info(`[dry-run] Would close ${repoRef.owner}/${repoRef.repo}#${repoRef.number}`);
+                return;
+              }
+
+              if (targetType === 'pr') {
+                await github.rest.pulls.update({
+                  owner: repoRef.owner,
+                  repo: repoRef.repo,
+                  pull_number: repoRef.number,
+                  state: 'closed',
+                });
+                return;
+              }
+
+              await github.rest.issues.update({
+                owner: repoRef.owner,
+                repo: repoRef.repo,
+                issue_number: repoRef.number,
+                state: 'closed',
+              });
+            }
+
+            async function processTarget(target) {
+              const query = `author:${targetAuthor} ${target.queryQualifier} is:open archived:false`;
+              const items = await github.paginate(github.rest.search.issuesAndPullRequests, {
+                q: query,
+                per_page: 100,
+              });
+
+              core.info(`Found ${items.length} open ${target.label}s for ${targetAuthor}.`);
+
+              for (const item of items) {
+                const repoRef = parseIssueUrl(item.url);
+                const htmlRef = `${item.html_url}`;
+
+                try {
+                  const { lastMeaningfulAt, remindedAfterLastActivity } = await getLastMeaningfulActivity(item, repoRef, target.type);
+                  const ageDays = daysSince(lastMeaningfulAt);
+                  const closeAt = addMonths(lastMeaningfulAt, target.closeAfterMonths);
+                  const warnAt = new Date(closeAt.getTime() - WARNING_DAYS * MS_PER_DAY);
+
+                  if (now >= closeAt) {
+                    try {
+                      await addComment(
+                        repoRef,
+                        `${CLOSE_MARKER}\nClosing this ${target.label} because there has been no non-automation comment for ${ageDays} days.`
+                      );
+                    } catch (error) {
+                      core.warning(`Could not add close comment to ${htmlRef}: ${error.message}`);
+                    }
+                    await closeItem(repoRef, target.type);
+                    core.info(`Closed ${htmlRef}; last meaningful comment/activity was ${lastMeaningfulAt.toISOString()}.`);
+                    continue;
+                  }
+
+                  if (now >= warnAt && !remindedAfterLastActivity) {
+                    const remainingDays = Math.max(1, Math.ceil((closeAt.getTime() - now.getTime()) / MS_PER_DAY));
+                    await addComment(
+                      repoRef,
+                      `${REMINDER_MARKER}\nThis ${target.label} will be closed in ${remainingDays} day${remainingDays === 1 ? '' : 's'} if there are no new non-automation comments.`
+                    );
+                    core.info(`Reminded ${htmlRef}; last meaningful comment/activity was ${lastMeaningfulAt.toISOString()}.`);
+                    continue;
+                  }
+
+                  core.info(`No action for ${htmlRef}; last meaningful comment/activity was ${lastMeaningfulAt.toISOString()} (${ageDays} days ago).`);
+                } catch (error) {
+                  core.warning(`Failed to process ${htmlRef}: ${error.message}`);
+                }
+              }
+            }
+
+            for (const target of TARGETS) {
+              await processTarget(target);
+            }
