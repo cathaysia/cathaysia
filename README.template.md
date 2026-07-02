@@ -100,7 +100,7 @@ maintenance and new tools here:
 
 辛勤的汗水离不开您的支持。
 
-如果这些项目帮到了你，欢迎支持后续维护和新工具开发：
+如果这些项目帮到了你，欢迎支持：
 
 <p>
   <a href="https://github.com/cathaysia/cathaysia/issues/1"><strong>支持我继续做下去</strong></a>
