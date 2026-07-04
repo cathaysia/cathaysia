@@ -77,7 +77,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [feat: invert call stack in flame graph to render as icicle graph #6090](https://github.com/firefox-devtools/profiler/pull/6090) | [firefox-devtools/profiler](https://github.com/firefox-devtools/profiler) | 2026-06-26 |
+| [feat: invert call stack in flame graph to render as icicle graph #6090](https://github.com/firefox-devtools/profiler/pull/6090) | [firefox-devtools/profiler](https://github.com/firefox-devtools/profiler) | 2026-07-03 |
 
 </details>
 
