@@ -75,9 +75,7 @@ Current interests:
 <details>
 <summary>Show tracked pull requests</summary>
 
-| Item | Repository | Updated |
-| ---- | ---------- | ------- |
-| [feat: invert call stack in flame graph to render as icicle graph #6090](https://github.com/firefox-devtools/profiler/pull/6090) | [firefox-devtools/profiler](https://github.com/firefox-devtools/profiler) | 2026-07-07 |
+_No tracked open pull requests._
 
 </details>
 
@@ -88,7 +86,6 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [support icicle graph #6077](https://github.com/firefox-devtools/profiler/issues/6077) | [firefox-devtools/profiler](https://github.com/firefox-devtools/profiler) | 2026-07-06 |
 | [Go to tag after file name #30010](https://github.com/neovim/neovim/issues/30010) | [neovim/neovim](https://github.com/neovim/neovim) | 2026-06-30 |
 | [bug: cannot parse `Code with dashes` #3](https://github.com/tree-sitter-grammars/tree-sitter-test/issues/3) | [tree-sitter-grammars/tree-sitter-test](https://github.com/tree-sitter-grammars/tree-sitter-test) | 2026-06-30 |
 | [support fileupload and filedownload #83](https://github.com/xidl/xidl/issues/83) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-04-30 |
