@@ -75,7 +75,10 @@ Current interests:
 <details>
 <summary>Show tracked pull requests</summary>
 
-_No tracked open pull requests._
+| Item | Repository | Updated |
+| ---- | ---------- | ------- |
+| [修复 bug, 添加文件选择 #223](https://github.com/krau/SaveAny-Bot/pull/223) | [krau/SaveAny-Bot](https://github.com/krau/SaveAny-Bot) | 2026-07-11 |
+| [chore(main): release 0.31.1 #130](https://github.com/xidl/idl-language-server/pull/130) | [xidl/idl-language-server](https://github.com/xidl/idl-language-server) | 2026-07-10 |
 
 </details>
 
