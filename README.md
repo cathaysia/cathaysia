@@ -89,7 +89,6 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [kitty: kitty 0.47.1 config watcher exhausts inotify watches when configuration is managed by Home Manager #540939](https://github.com/NixOS/nixpkgs/issues/540939) | [NixOS/nixpkgs](https://github.com/NixOS/nixpkgs) | 2026-07-12 |
 | [Go to tag after file name #30010](https://github.com/neovim/neovim/issues/30010) | [neovim/neovim](https://github.com/neovim/neovim) | 2026-06-30 |
 | [bug: cannot parse `Code with dashes` #3](https://github.com/tree-sitter-grammars/tree-sitter-test/issues/3) | [tree-sitter-grammars/tree-sitter-test](https://github.com/tree-sitter-grammars/tree-sitter-test) | 2026-06-30 |
 | [support fileupload and filedownload #83](https://github.com/xidl/xidl/issues/83) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-04-30 |
