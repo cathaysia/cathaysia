@@ -77,6 +77,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
+| [chore(master): release 0.84.0 #224](https://github.com/xidl/xidl/pull/224) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-07-15 |
 | [修复 bug, 添加文件选择 #223](https://github.com/krau/SaveAny-Bot/pull/223) | [krau/SaveAny-Bot](https://github.com/krau/SaveAny-Bot) | 2026-07-11 |
 | [chore(main): release 0.31.1 #130](https://github.com/xidl/idl-language-server/pull/130) | [xidl/idl-language-server](https://github.com/xidl/idl-language-server) | 2026-07-10 |
 
@@ -91,7 +92,6 @@ Current interests:
 | ---- | ---------- | ------- |
 | [Go to tag after file name #30010](https://github.com/neovim/neovim/issues/30010) | [neovim/neovim](https://github.com/neovim/neovim) | 2026-06-30 |
 | [bug: cannot parse `Code with dashes` #3](https://github.com/tree-sitter-grammars/tree-sitter-test/issues/3) | [tree-sitter-grammars/tree-sitter-test](https://github.com/tree-sitter-grammars/tree-sitter-test) | 2026-06-30 |
-| [support fileupload and filedownload #83](https://github.com/xidl/xidl/issues/83) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-04-30 |
 
 </details>
 
