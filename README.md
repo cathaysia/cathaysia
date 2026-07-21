@@ -77,6 +77,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
+| [chore(master): release 0.26.0 #95](https://github.com/cathaysia/crown/pull/95) | [cathaysia/crown](https://github.com/cathaysia/crown) | 2026-07-20 |
 | [修复 bug, 添加文件选择 #223](https://github.com/krau/SaveAny-Bot/pull/223) | [krau/SaveAny-Bot](https://github.com/krau/SaveAny-Bot) | 2026-07-11 |
 | [chore(main): release 0.31.1 #130](https://github.com/xidl/idl-language-server/pull/130) | [xidl/idl-language-server](https://github.com/xidl/idl-language-server) | 2026-07-10 |
 
