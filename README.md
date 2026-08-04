@@ -77,7 +77,6 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [fix: attempt to subtract with overflow in RC2 key expansion when t1 >… #108](https://github.com/cathaysia/crown/pull/108) | [cathaysia/crown](https://github.com/cathaysia/crown) | 2026-08-03 |
 | [修复 bug, 添加文件选择 #223](https://github.com/krau/SaveAny-Bot/pull/223) | [krau/SaveAny-Bot](https://github.com/krau/SaveAny-Bot) | 2026-07-27 |
 
 </details>
