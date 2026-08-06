@@ -75,9 +75,7 @@ Current interests:
 <details>
 <summary>Show tracked pull requests</summary>
 
-| Item | Repository | Updated |
-| ---- | ---------- | ------- |
-| [修复 bug, 添加文件选择 #223](https://github.com/krau/SaveAny-Bot/pull/223) | [krau/SaveAny-Bot](https://github.com/krau/SaveAny-Bot) | 2026-07-27 |
+_No tracked open pull requests._
 
 </details>
 
