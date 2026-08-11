@@ -77,7 +77,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [feat(remote): copy only build artifacts back from remote builds #1793](https://github.com/cross-rs/cross/pull/1793) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-08-07 |
+| [feat(remote): copy only build artifacts back from remote builds #1793](https://github.com/cross-rs/cross/pull/1793) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-08-10 |
 
 </details>
 
