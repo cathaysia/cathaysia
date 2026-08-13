@@ -77,8 +77,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [feat(typescript)!: recursive schemas, client runtime, and flattened server handlers #253](https://github.com/xidl/xidl/pull/253) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-08-12 |
-| [feat(remote): copy only build artifacts back from remote builds #1793](https://github.com/cross-rs/cross/pull/1793) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-08-11 |
+| [feat(remote): copy only build artifacts back from remote builds #1793](https://github.com/cross-rs/cross/pull/1793) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-08-13 |
 | [chore(main): release 0.36.0 #159](https://github.com/xidl/idl-language-server/pull/159) | [xidl/idl-language-server](https://github.com/xidl/idl-language-server) | 2026-08-11 |
 
 </details>
