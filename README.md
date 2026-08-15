@@ -75,9 +75,7 @@ Current interests:
 <details>
 <summary>Show tracked pull requests</summary>
 
-| Item | Repository | Updated |
-| ---- | ---------- | ------- |
-| [feat(remote): copy only build artifacts back from remote builds #1793](https://github.com/cross-rs/cross/pull/1793) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-08-13 |
+_No tracked open pull requests._
 
 </details>
 
