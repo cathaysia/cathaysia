@@ -75,7 +75,9 @@ Current interests:
 <details>
 <summary>Show tracked pull requests</summary>
 
-_No tracked open pull requests._
+| Item | Repository | Updated |
+| ---- | ---------- | ------- |
+| [add RwLock recursive detect #532](https://github.com/Amanieu/parking_lot/pull/532) | [Amanieu/parking_lot](https://github.com/Amanieu/parking_lot) | 2026-08-17 |
 
 </details>
 
@@ -86,6 +88,7 @@ _No tracked open pull requests._
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
+| [\[Feature Request\] panic when user try get recursive lock. #438](https://github.com/Amanieu/parking_lot/issues/438) | [Amanieu/parking_lot](https://github.com/Amanieu/parking_lot) | 2026-08-17 |
 | [Go to tag after file name #30010](https://github.com/neovim/neovim/issues/30010) | [neovim/neovim](https://github.com/neovim/neovim) | 2026-06-30 |
 | [bug: cannot parse `Code with dashes` #3](https://github.com/tree-sitter-grammars/tree-sitter-test/issues/3) | [tree-sitter-grammars/tree-sitter-test](https://github.com/tree-sitter-grammars/tree-sitter-test) | 2026-06-30 |
 
