@@ -77,7 +77,6 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [test(xidl-jsonrpc): expand transport, codec, and session coverage #264](https://github.com/xidl/xidl/pull/264) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-08-18 |
 | [add RwLock recursive detect #532](https://github.com/Amanieu/parking_lot/pull/532) | [Amanieu/parking_lot](https://github.com/Amanieu/parking_lot) | 2026-08-17 |
 
 </details>
