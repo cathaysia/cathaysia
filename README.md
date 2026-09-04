@@ -77,8 +77,8 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
+| [add RwLock recursive detect #532](https://github.com/Amanieu/parking_lot/pull/532) | [Amanieu/parking_lot](https://github.com/Amanieu/parking_lot) | 2026-09-03 |
 | [chore(main): release 0.37.0 #171](https://github.com/xidl/idl-language-server/pull/171) | [xidl/idl-language-server](https://github.com/xidl/idl-language-server) | 2026-08-31 |
-| [add RwLock recursive detect #532](https://github.com/Amanieu/parking_lot/pull/532) | [Amanieu/parking_lot](https://github.com/Amanieu/parking_lot) | 2026-08-17 |
 
 </details>
 
