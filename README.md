@@ -89,6 +89,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
+| [Support .dockerignore #1800](https://github.com/cross-rs/cross/issues/1800) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-09-05 |
 | [Go to tag after file name #30010](https://github.com/neovim/neovim/issues/30010) | [neovim/neovim](https://github.com/neovim/neovim) | 2026-06-30 |
 | [bug: cannot parse `Code with dashes` #3](https://github.com/tree-sitter-grammars/tree-sitter-test/issues/3) | [tree-sitter-grammars/tree-sitter-test](https://github.com/tree-sitter-grammars/tree-sitter-test) | 2026-06-30 |
 
