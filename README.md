@@ -77,6 +77,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
+| [feat(remote): support .dockerignore when copying files to remote host #1801](https://github.com/cross-rs/cross/pull/1801) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-09-07 |
 | [add RwLock recursive detect #532](https://github.com/Amanieu/parking_lot/pull/532) | [Amanieu/parking_lot](https://github.com/Amanieu/parking_lot) | 2026-09-03 |
 | [chore(main): release 0.37.0 #171](https://github.com/xidl/idl-language-server/pull/171) | [xidl/idl-language-server](https://github.com/xidl/idl-language-server) | 2026-08-31 |
 
@@ -89,7 +90,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [Support .dockerignore #1800](https://github.com/cross-rs/cross/issues/1800) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-09-05 |
+| [Support .dockerignore #1800](https://github.com/cross-rs/cross/issues/1800) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-09-07 |
 | [Go to tag after file name #30010](https://github.com/neovim/neovim/issues/30010) | [neovim/neovim](https://github.com/neovim/neovim) | 2026-06-30 |
 | [bug: cannot parse `Code with dashes` #3](https://github.com/tree-sitter-grammars/tree-sitter-test/issues/3) | [tree-sitter-grammars/tree-sitter-test](https://github.com/tree-sitter-grammars/tree-sitter-test) | 2026-06-30 |
 
