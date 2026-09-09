@@ -77,7 +77,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [feat(remote): support .dockerignore when copying files to remote host #1801](https://github.com/cross-rs/cross/pull/1801) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-09-07 |
+| [feat(remote): support .dockerignore when copying files to remote host #1801](https://github.com/cross-rs/cross/pull/1801) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-09-09 |
 | [add RwLock recursive detect #532](https://github.com/Amanieu/parking_lot/pull/532) | [Amanieu/parking_lot](https://github.com/Amanieu/parking_lot) | 2026-09-03 |
 | [chore(main): release 0.37.0 #171](https://github.com/xidl/idl-language-server/pull/171) | [xidl/idl-language-server](https://github.com/xidl/idl-language-server) | 2026-08-31 |
 
