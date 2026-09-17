@@ -35,13 +35,13 @@ jobs:
               {
                 type: 'pr',
                 queryQualifier: 'is:pr',
-                closeAfterMonths: 1,
+                closeAfterMonths: 6,
                 label: 'pull request',
               },
               {
                 type: 'issue',
                 queryQualifier: 'is:issue',
-                closeAfterMonths: 3,
+                closeAfterMonths: 6,
                 label: 'issue',
               },
             ];
