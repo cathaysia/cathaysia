@@ -77,9 +77,9 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [chore(master): release 0.27.0 #124](https://github.com/cathaysia/crown/pull/124) | [cathaysia/crown](https://github.com/cathaysia/crown) | 2026-09-21 |
+| [chore(master): release 0.27.0 #124](https://github.com/cathaysia/crown/pull/124) | [cathaysia/crown](https://github.com/cathaysia/crown) | 2026-09-23 |
+| [feat(editing): gF jumps to tag after file name #42043](https://github.com/neovim/neovim/pull/42043) | [neovim/neovim](https://github.com/neovim/neovim) | 2026-09-23 |
 | [docs(remote.md): fix typo #1803](https://github.com/cross-rs/cross/pull/1803) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-09-21 |
-| [chore(main): release 0.37.0 #171](https://github.com/xidl/idl-language-server/pull/171) | [xidl/idl-language-server](https://github.com/xidl/idl-language-server) | 2026-09-15 |
 | [feat(remote): support .dockerignore when copying files to remote host #1801](https://github.com/cross-rs/cross/pull/1801) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-09-14 |
 | [add RwLock recursive detect #532](https://github.com/Amanieu/parking_lot/pull/532) | [Amanieu/parking_lot](https://github.com/Amanieu/parking_lot) | 2026-09-03 |
 
@@ -92,7 +92,6 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [typescript-rest: @http_bearer / @http_basic emit a ClientAuth kind that never matches, so the Authorization header is silently dropped #274](https://github.com/xidl/xidl/issues/274) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-09-21 |
 | [Go to tag after file name #30010](https://github.com/neovim/neovim/issues/30010) | [neovim/neovim](https://github.com/neovim/neovim) | 2026-09-17 |
 | [Support .dockerignore #1800](https://github.com/cross-rs/cross/issues/1800) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-09-07 |
 
