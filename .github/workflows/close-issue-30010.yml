@@ -1,0 +1,114 @@
+name: Close Neovim Issue 30010
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run mode (true/false)"
+        required: false
+        default: "false"
+        type: boolean
+
+permissions:
+  contents: read
+
+jobs:
+  close-issue-30010:
+    runs-on: ubuntu-latest
+    env:
+      TARGET_OWNER: "neovim"
+      TARGET_REPO: "neovim"
+      TARGET_ISSUE: "30010"
+      DRY_RUN: ${{ inputs.dry_run || vars.CLOSE_ISSUE_DRY_RUN || 'false' }}
+    steps:
+      - name: Close Neovim issue 30010
+        uses: actions/github-script@v8
+        env:
+          STALE_ITEMS_TOKEN: ${{ secrets.STALE_ITEMS_TOKEN }}
+        with:
+          github-token: ${{ secrets.STALE_ITEMS_TOKEN || secrets.GITHUB_TOKEN }}
+          script: |
+            const owner = process.env.TARGET_OWNER || 'neovim';
+            const repo = process.env.TARGET_REPO || 'neovim';
+            const issueNumber = parseInt(process.env.TARGET_ISSUE || '30010', 10);
+            const dryRun = (process.env.DRY_RUN || '').toLowerCase() === 'true';
+
+            if (!process.env.STALE_ITEMS_TOKEN) {
+              core.warning('Missing STALE_ITEMS_TOKEN secret. Add a PAT with access if closing external issues fails.');
+            }
+
+            core.info(`Checking status of ${owner}/${repo}#${issueNumber}...`);
+
+            let issue;
+            try {
+              const queryResult = await github.graphql(`
+                query($owner: String!, $repo: String!, $number: Int!) {
+                  repository(owner: $owner, name: $repo) {
+                    issue(number: $number) {
+                      id
+                      state
+                      title
+                      url
+                    }
+                  }
+                }
+              `, { owner, repo, number: issueNumber });
+
+              issue = queryResult?.repository?.issue;
+            } catch (error) {
+              core.info(`GraphQL query failed (${error.message}). Falling back to REST API...`);
+              const restResult = await github.rest.issues.get({
+                owner,
+                repo,
+                issue_number: issueNumber,
+              });
+              issue = {
+                id: restResult.data.node_id,
+                state: restResult.data.state.toUpperCase(),
+                title: restResult.data.title,
+                url: restResult.data.html_url,
+              };
+            }
+
+            if (!issue) {
+              throw new Error(`Issue ${owner}/${repo}#${issueNumber} not found.`);
+            }
+
+            core.info(`Issue #${issueNumber} "${issue.title}" state is currently: ${issue.state}`);
+
+            if (issue.state === 'CLOSED') {
+              core.info(`Issue ${issue.url} is already closed. No action needed.`);
+              return;
+            }
+
+            if (dryRun) {
+              core.info(`[dry-run] Would close issue ${issue.url} (node_id: ${issue.id})`);
+              return;
+            }
+
+            core.info(`Closing issue ${issue.url}...`);
+
+            try {
+              await github.graphql(`
+                mutation($issueId: ID!) {
+                  closeIssue(input: { issueId: $issueId }) {
+                    issue {
+                      id
+                      state
+                    }
+                  }
+                }
+              `, { issueId: issue.id });
+              core.info(`Successfully closed ${issue.url} via GraphQL mutation closeIssue.`);
+            } catch (error) {
+              core.warning(`GraphQL closeIssue failed: ${error.message}. Attempting REST API fallback...`);
+              await github.rest.issues.update({
+                owner,
+                repo,
+                issue_number: issueNumber,
+                state: 'closed',
+              });
+              core.info(`Successfully closed ${issue.url} via REST API.`);
+            }
