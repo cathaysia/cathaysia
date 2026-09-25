@@ -79,7 +79,6 @@ Current interests:
 | ---- | ---------- | ------- |
 | [chore(master): release 0.27.0 #124](https://github.com/cathaysia/crown/pull/124) | [cathaysia/crown](https://github.com/cathaysia/crown) | 2026-09-23 |
 | [docs(remote.md): fix typo #1803](https://github.com/cross-rs/cross/pull/1803) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-09-21 |
-| [feat(remote): support .dockerignore when copying files to remote host #1801](https://github.com/cross-rs/cross/pull/1801) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-09-14 |
 
 </details>
 
@@ -88,9 +87,7 @@ Current interests:
 <details>
 <summary>Show tracked issues</summary>
 
-| Item | Repository | Updated |
-| ---- | ---------- | ------- |
-| [Support .dockerignore #1800](https://github.com/cross-rs/cross/issues/1800) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-09-07 |
+_No tracked open issues._
 
 </details>
 
