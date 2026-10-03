@@ -77,6 +77,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
+| [chore(master): release 0.28.0 #132](https://github.com/cathaysia/crown/pull/132) | [cathaysia/crown](https://github.com/cathaysia/crown) | 2026-10-03 |
 | [docs(remote.md): fix typo #1803](https://github.com/cross-rs/cross/pull/1803) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-09-21 |
 
 </details>
