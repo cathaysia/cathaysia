@@ -77,7 +77,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [feat(napi): bind the evp hash/block/aead/stream surface to node #155](https://github.com/cathaysia/crown/pull/155) | [cathaysia/crown](https://github.com/cathaysia/crown) | 2026-10-12 |
+| [feat(napi): bind the evp surface to node #155](https://github.com/cathaysia/crown/pull/155) | [cathaysia/crown](https://github.com/cathaysia/crown) | 2026-10-12 |
 | [docs(remote.md): fix typo #1803](https://github.com/cross-rs/cross/pull/1803) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-09-21 |
 
 </details>
@@ -87,7 +87,10 @@ Current interests:
 <details>
 <summary>Show tracked issues</summary>
 
-_No tracked open issues._
+| Item | Repository | Updated |
+| ---- | ---------- | ------- |
+| [\[feat\] versioning: versioned contracts, lifecycle annotations, per-version projections, and version-based operation overloading #314](https://github.com/xidl/xidl/issues/314) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-13 |
+| [\[feat\] builtin library packages — import "@xidl/versioning"-style standard libraries like TypeSpec/gRPC #315](https://github.com/xidl/xidl/issues/315) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-13 |
 
 </details>
 
