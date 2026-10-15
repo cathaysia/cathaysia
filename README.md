@@ -89,7 +89,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [\[feat\] versioning: versioned contracts, lifecycle annotations, per-version projections, and version-based operation overloading #314](https://github.com/xidl/xidl/issues/314) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-13 |
+| [\[feat\] versioning: versioned contracts, lifecycle annotations, per-version projections, and version-based operation overloading #314](https://github.com/xidl/xidl/issues/314) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-14 |
 | [\[feat\] builtin library packages — import "@xidl/versioning"-style standard libraries like TypeSpec/gRPC #315](https://github.com/xidl/xidl/issues/315) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-13 |
 
 </details>
