@@ -77,7 +77,8 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [feat(napi): bind the evp surface to node #155](https://github.com/cathaysia/crown/pull/155) | [cathaysia/crown](https://github.com/cathaysia/crown) | 2026-10-12 |
+| [feat(import): compile imported files as independent units #349](https://github.com/xidl/xidl/pull/349) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-17 |
+| [chore(master): release 0.103.0 #350](https://github.com/xidl/xidl/pull/350) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-17 |
 | [docs(remote.md): fix typo #1803](https://github.com/cross-rs/cross/pull/1803) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-09-21 |
 
 </details>
@@ -89,9 +90,8 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [\[feat\] xidl.toml library manifest — external libraries with per-import version selection #331](https://github.com/xidl/xidl/issues/331) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-15 |
+| [\[FEATURE REQUEST\] import: independent compilation units with versioned type references #348](https://github.com/xidl/xidl/issues/348) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-17 |
 | [\[feat\] builtin library packages — import "@xidl/versioning"-style standard libraries like TypeSpec/gRPC #315](https://github.com/xidl/xidl/issues/315) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-15 |
-| [\[feat\] versioning: versioned contracts, lifecycle annotations, per-version projections, and version-based operation overloading #314](https://github.com/xidl/xidl/issues/314) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-15 |
 
 </details>
 
