@@ -77,8 +77,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [feat(import): compile imported files as independent units #349](https://github.com/xidl/xidl/pull/349) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-17 |
-| [chore(master): release 0.103.0 #350](https://github.com/xidl/xidl/pull/350) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-17 |
+| [chore(master): release 0.105.0 #358](https://github.com/xidl/xidl/pull/358) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-18 |
 | [docs(remote.md): fix typo #1803](https://github.com/cross-rs/cross/pull/1803) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-09-21 |
 
 </details>
@@ -88,10 +87,7 @@ Current interests:
 <details>
 <summary>Show tracked issues</summary>
 
-| Item | Repository | Updated |
-| ---- | ---------- | ------- |
-| [\[FEATURE REQUEST\] import: independent compilation units with versioned type references #348](https://github.com/xidl/xidl/issues/348) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-17 |
-| [\[feat\] builtin library packages — import "@xidl/versioning"-style standard libraries like TypeSpec/gRPC #315](https://github.com/xidl/xidl/issues/315) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-15 |
+_No tracked open issues._
 
 </details>
 
