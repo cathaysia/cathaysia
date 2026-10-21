@@ -77,6 +77,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
+| [feat(bundler): build macOS app and dmg bundles on Linux #16342](https://github.com/tauri-apps/tauri/pull/16342) | [tauri-apps/tauri](https://github.com/tauri-apps/tauri) | 2026-10-21 |
 | [docs(remote.md): fix typo #1803](https://github.com/cross-rs/cross/pull/1803) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-10-19 |
 
 </details>
@@ -86,7 +87,9 @@ Current interests:
 <details>
 <summary>Show tracked issues</summary>
 
-_No tracked open issues._
+| Item | Repository | Updated |
+| ---- | ---------- | ------- |
+| [\[feat\] Support building macOS .app and .dmg bundles from a Linux host #16340](https://github.com/tauri-apps/tauri/issues/16340) | [tauri-apps/tauri](https://github.com/tauri-apps/tauri) | 2026-10-21 |
 
 </details>
 
