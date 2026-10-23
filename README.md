@@ -77,8 +77,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [chore(master): release 0.106.0 #378](https://github.com/xidl/xidl/pull/378) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-22 |
-| [feat(bundler): build macOS app and dmg bundles on Linux #16342](https://github.com/tauri-apps/tauri/pull/16342) | [tauri-apps/tauri](https://github.com/tauri-apps/tauri) | 2026-10-21 |
+| [feat(bundler): build macOS app and dmg bundles on Linux #16342](https://github.com/tauri-apps/tauri/pull/16342) | [tauri-apps/tauri](https://github.com/tauri-apps/tauri) | 2026-10-23 |
 | [docs(remote.md): fix typo #1803](https://github.com/cross-rs/cross/pull/1803) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-10-19 |
 
 </details>
