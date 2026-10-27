@@ -77,7 +77,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [chore(master): release 0.107.0 #424](https://github.com/xidl/xidl/pull/424) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-26 |
+| [chore(master): release 0.107.0 #424](https://github.com/xidl/xidl/pull/424) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-27 |
 | [docs(remote.md): fix typo #1803](https://github.com/cross-rs/cross/pull/1803) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-10-19 |
 
 </details>
