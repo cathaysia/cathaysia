@@ -77,8 +77,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [chore(master): release 0.107.0 #424](https://github.com/xidl/xidl/pull/424) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-27 |
-| [docs(remote.md): fix typo #1803](https://github.com/cross-rs/cross/pull/1803) | [cross-rs/cross](https://github.com/cross-rs/cross) | 2026-10-19 |
+| [chore(master): release 0.107.1 #431](https://github.com/xidl/xidl/pull/431) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-28 |
 
 </details>
 
@@ -87,7 +86,10 @@ Current interests:
 <details>
 <summary>Show tracked issues</summary>
 
-_No tracked open issues._
+| Item | Repository | Updated |
+| ---- | ---------- | ------- |
+| [not 实现的有问题 #432](https://github.com/xidl/xidl/issues/432) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-28 |
+| [Inconsistent parameter names #3605](https://github.com/github/github-mcp-server/issues/3605) | [github/github-mcp-server](https://github.com/github/github-mcp-server) | 2026-10-28 |
 
 </details>
 
