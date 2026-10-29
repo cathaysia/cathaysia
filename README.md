@@ -77,7 +77,8 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [chore(master): release 0.107.1 #431](https://github.com/xidl/xidl/pull/431) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-28 |
+| [chore(master): release 0.107.1 #431](https://github.com/xidl/xidl/pull/431) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-29 |
+| [fix: Use a hidden headerbar instead of disabling decorations. #4](https://github.com/tauri-apps/winit-gtk4/pull/4) | [tauri-apps/winit-gtk4](https://github.com/tauri-apps/winit-gtk4) | 2026-10-28 |
 
 </details>
 
@@ -88,7 +89,6 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [not 实现的有问题 #432](https://github.com/xidl/xidl/issues/432) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-28 |
 | [Inconsistent parameter names #3605](https://github.com/github/github-mcp-server/issues/3605) | [github/github-mcp-server](https://github.com/github/github-mcp-server) | 2026-10-28 |
 
 </details>
