@@ -77,7 +77,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [chore(master): release 0.109.0 #454](https://github.com/xidl/xidl/pull/454) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-31 |
+| [ci(cross): survive ubuntu 26.04 runner changes #156](https://github.com/cathaysia/crown/pull/156) | [cathaysia/crown](https://github.com/cathaysia/crown) | 2026-11-01 |
 | [update docs #451](https://github.com/xidl/xidl/pull/451) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-10-30 |
 | [fix: Use a hidden headerbar instead of disabling decorations. #4](https://github.com/tauri-apps/winit-gtk4/pull/4) | [tauri-apps/winit-gtk4](https://github.com/tauri-apps/winit-gtk4) | 2026-10-28 |
 
