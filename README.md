@@ -77,7 +77,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [chore(master): release 0.111.0 #476](https://github.com/xidl/xidl/pull/476) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-11-03 |
+| [chore(master): release 0.111.0 #476](https://github.com/xidl/xidl/pull/476) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-11-04 |
 | [fix: Use a hidden headerbar instead of disabling decorations. #4](https://github.com/tauri-apps/winit-gtk4/pull/4) | [tauri-apps/winit-gtk4](https://github.com/tauri-apps/winit-gtk4) | 2026-10-28 |
 
 </details>
