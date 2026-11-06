@@ -89,7 +89,7 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [Inconsistent parameter names #3605](https://github.com/github/github-mcp-server/issues/3605) | [github/github-mcp-server](https://github.com/github/github-mcp-server) | 2026-10-30 |
+| [Inconsistent parameter names #3605](https://github.com/github/github-mcp-server/issues/3605) | [github/github-mcp-server](https://github.com/github/github-mcp-server) | 2026-11-05 |
 
 </details>
 
