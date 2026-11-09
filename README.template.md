@@ -55,6 +55,7 @@ Current interests:
 
 | Project                                                                   | What it is                                   |
 | ------------------------------------------------------------------------- | -------------------------------------------- |
+| [xidl](https://github.com/xidl/xidl)                                      | IDL-first API contract and codegen platform. |
 | [tree-sitter-asciidoc](https://github.com/cathaysia/tree-sitter-asciidoc) | Tree-sitter grammar for AsciiDoc.            |
 | [tree-sitter-idl](https://github.com/cathaysia/tree-sitter-idl)           | Tree-sitter grammar for IDL-related tooling. |
 | [tree-sitter-jinja2](https://github.com/cathaysia/tree-sitter-jinja2)     | Tree-sitter grammar for Jinja2 templates.    |
