@@ -67,7 +67,7 @@ Current interests:
 | --------------------------------------------------------- | ----------------------------------------- |
 | [nix4vscode](https://github.com/nix-community/nix4vscode) | Nix tooling for better VS Code workflows. |
 | [asphinx](https://github.com/cathaysia/asphinx) ![archived](https://img.shields.io/badge/archived-6b7280?style=flat-square)           | Static site generator for AsciiDoc.       |
-| [finalgit](https://github.com/cathaysia/finalgit)         | Experimental Git client.                  |
+| [finalgit](https://github.com/cathaysia/finalgit) ![archived](https://img.shields.io/badge/archived-6b7280?style=flat-square)         | Experimental Git client.                  |
 | [crown](https://github.com/cathaysia/crown)               | Crypto library experiments.               |
 
 ## Activity
