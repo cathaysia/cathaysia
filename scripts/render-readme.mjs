@@ -11,6 +11,12 @@ const targetUser = process.env.README_TARGET_USER || repositoryOwner;
 
 const openLimit = readPositiveInteger("README_OPEN_LIMIT", 20);
 
+const archivedBadge =
+  "![archived](https://img.shields.io/badge/archived-6b7280?style=flat-square)";
+const selectedWorkHeading = "## Selected Work";
+const repositoryLinkPattern =
+  /\[([^\]]+)\]\((https:\/\/github\.com\/([A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+))\)/g;
+
 const openPullRequestQuery =
   process.env.README_OPEN_PR_QUERY || `author:${targetUser} is:pr is:open archived:false`;
 const openIssueQuery =
@@ -84,6 +90,47 @@ function escapeMarkdown(value) {
     .replace(/\]/g, "\\]");
 }
 
+function selectedWorkSection(template) {
+  const start = template.indexOf(selectedWorkHeading);
+
+  if (start === -1) {
+    return "";
+  }
+
+  const end = template.indexOf("\n## ", start + selectedWorkHeading.length);
+  return template.slice(start, end === -1 ? template.length : end);
+}
+
+function linkedRepositories(section) {
+  const repositories = new Set();
+
+  for (const match of section.matchAll(repositoryLinkPattern)) {
+    repositories.add(match[3]);
+  }
+
+  return [...repositories];
+}
+
+async function fetchArchivedRepositories(repositories) {
+  const results = await Promise.all(
+    repositories.map(async (repository) => {
+      const data = await githubFetch(new URL(`/repos/${repository}`, API_ROOT));
+      return { repository, archived: data.archived === true };
+    })
+  );
+
+  return new Set(results.filter((result) => result.archived).map((result) => result.repository));
+}
+
+function addArchivedBadges(section, archivedRepositories) {
+  return section
+    .split(` ${archivedBadge}`)
+    .join("")
+    .replace(repositoryLinkPattern, (link, _label, _url, repository) =>
+      archivedRepositories.has(repository) ? `${link} ${archivedBadge}` : link
+    );
+}
+
 function formatOpenItems(items, emptyText) {
   if (items.length === 0) {
     return `_${emptyText}_`;
@@ -106,14 +153,21 @@ async function main() {
   ]);
 
   const template = await readFile(TEMPLATE_PATH, "utf8");
-  const output = template
+  const selectedWork = selectedWorkSection(template);
+  const archivedRepositories = await fetchArchivedRepositories(linkedRepositories(selectedWork));
+  const templateWithBadges = selectedWork
+    ? template.replace(selectedWork, () => addArchivedBadges(selectedWork, archivedRepositories))
+    : template;
+  const output = templateWithBadges
     .replaceAll("{{TRACKED_PULL_REQUESTS}}", formatOpenItems(openPullRequests, "No tracked open pull requests."))
     .replaceAll("{{TRACKED_ISSUES}}", formatOpenItems(openIssues, "No tracked open issues."));
 
   await writeFile(OUTPUT_PATH, output, "utf8");
 
   console.log(
-    `Rendered README.md for ${targetUser}: ${openPullRequests.length} open PRs, ${openIssues.length} open issues.`
+    `Rendered README.md for ${targetUser}: ` +
+      `${openPullRequests.length} open PRs, ${openIssues.length} open issues, ` +
+      `${archivedRepositories.size} archived selected-work repositories.`
   );
 }
 

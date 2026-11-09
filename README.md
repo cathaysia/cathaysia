@@ -1,4 +1,5 @@
 <!-- This file renders README.md via scripts/render-readme.mjs. Edit this template instead of README.md. -->
+<!-- Archived badges in Selected Work are added automatically from GitHub repository metadata. -->
 
 <div align="center">
 
@@ -54,17 +55,17 @@ Current interests:
 
 | Project                                                                   | What it is                                   |
 | ------------------------------------------------------------------------- | -------------------------------------------- |
-| [tree-sitter-asciidoc](https://github.com/cathaysia/tree-sitter-asciidoc) | Tree-sitter grammar for AsciiDoc.            |
+| [tree-sitter-asciidoc](https://github.com/cathaysia/tree-sitter-asciidoc) ![archived](https://img.shields.io/badge/archived-6b7280?style=flat-square) | Tree-sitter grammar for AsciiDoc.            |
 | [tree-sitter-idl](https://github.com/cathaysia/tree-sitter-idl)           | Tree-sitter grammar for IDL-related tooling. |
-| [tree-sitter-jinja2](https://github.com/cathaysia/tree-sitter-jinja2)     | Tree-sitter grammar for Jinja2 templates.    |
-| [tree-sitter-plantuml](https://github.com/cathaysia/tree-sitter-plantuml) | PlantUML grammar work in progress.           |
+| [tree-sitter-jinja2](https://github.com/cathaysia/tree-sitter-jinja2) ![archived](https://img.shields.io/badge/archived-6b7280?style=flat-square)     | Tree-sitter grammar for Jinja2 templates.    |
+| [tree-sitter-plantuml](https://github.com/cathaysia/tree-sitter-plantuml) ![archived](https://img.shields.io/badge/archived-6b7280?style=flat-square) | PlantUML grammar work in progress.           |
 
 ### Developer Tools
 
 | Project                                                   | What it is                                |
 | --------------------------------------------------------- | ----------------------------------------- |
 | [nix4vscode](https://github.com/nix-community/nix4vscode) | Nix tooling for better VS Code workflows. |
-| [asphinx](https://github.com/cathaysia/asphinx)           | Static site generator for AsciiDoc.       |
+| [asphinx](https://github.com/cathaysia/asphinx) ![archived](https://img.shields.io/badge/archived-6b7280?style=flat-square)           | Static site generator for AsciiDoc.       |
 | [finalgit](https://github.com/cathaysia/finalgit)         | Experimental Git client.                  |
 | [crown](https://github.com/cathaysia/crown)               | Crypto library experiments.               |
 
@@ -77,7 +78,6 @@ Current interests:
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
-| [chore(master): release 0.111.0 #476](https://github.com/xidl/xidl/pull/476) | [xidl/xidl](https://github.com/xidl/xidl) | 2026-11-04 |
 | [fix: Use a hidden headerbar instead of disabling decorations. #4](https://github.com/tauri-apps/winit-gtk4/pull/4) | [tauri-apps/winit-gtk4](https://github.com/tauri-apps/winit-gtk4) | 2026-10-28 |
 
 </details>

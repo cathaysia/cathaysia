@@ -1,4 +1,5 @@
 <!-- This file renders README.md via scripts/render-readme.mjs. Edit this template instead of README.md. -->
+<!-- Archived badges in Selected Work are added automatically from GitHub repository metadata. -->
 
 <div align="center">
 
