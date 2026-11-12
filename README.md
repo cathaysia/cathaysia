@@ -77,9 +77,7 @@ Current interests:
 <details>
 <summary>Show tracked pull requests</summary>
 
-| Item | Repository | Updated |
-| ---- | ---------- | ------- |
-| [fix: Use a hidden headerbar instead of disabling decorations. #4](https://github.com/tauri-apps/winit-gtk4/pull/4) | [tauri-apps/winit-gtk4](https://github.com/tauri-apps/winit-gtk4) | 2026-10-28 |
+_No tracked open pull requests._
 
 </details>
 
