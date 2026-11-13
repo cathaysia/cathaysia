@@ -88,6 +88,8 @@ _No tracked open pull requests._
 
 | Item | Repository | Updated |
 | ---- | ---------- | ------- |
+| [select 必须要有 items 属性 #1](https://github.com/cathaysia/style/issues/1) | [cathaysia/style](https://github.com/cathaysia/style) | 2026-11-13 |
+| [问题 #27](https://github.com/xidl/codemode/issues/27) | [xidl/codemode](https://github.com/xidl/codemode) | 2026-11-13 |
 | [Inconsistent parameter names #3605](https://github.com/github/github-mcp-server/issues/3605) | [github/github-mcp-server](https://github.com/github/github-mcp-server) | 2026-11-05 |
 
 </details>
